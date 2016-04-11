@@ -1,4 +1,4 @@
-\documentclass[10pt,a4paper]{report}
+\documentclass[10pt,a4paper]{book}
 
 \usepackage{lipsum}
 
@@ -12,6 +12,20 @@
 \rhead{\rightmark}
 \cfoot{\thepage}
 
+\newenvironment{dedication}
+{
+   \clearpage
+   \thispagestyle{empty}
+   \vspace*{\stretch{1}}
+   \itshape
+   \raggedright
+}%
+{
+   \par
+   \vspace*{\stretch{3}}
+   \clearpage
+}
+
 \begin{document}
 
 \frontmatter
@@ -22,8 +36,9 @@
 \date{\today}
 \maketitle
 
-% start a ?dedicated-page for this line
-I *believed I can fly.
+\begin{dedication}
+  I *believed I can fly.
+\end{dedication}
 
 \tableofcontents
 
